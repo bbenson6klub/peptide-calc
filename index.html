@@ -89,10 +89,31 @@ const k=m/s.tick,n=Math.round(k),u=x=>s.scale==1?f(x,2)+" mL":f(x,2)+"-unit";
 if(Math.abs(k-n)<.01){const L=Math.floor(n/s.le),r=n%s.le;const w=r==0?`the ${ord(L)} long line`:L==0?`the ${ord(r)} short tick from zero`:`${r} short tick${r>1?"s":""} past the ${ord(L)} long line`;return`Draw to the ${u(n*s.tick)} line (${w}) on a ${s.label} syringe. ${s.desc}`}
 const a=Math.floor(k)*s.tick;const h=s.id=="u30"&&Math.abs(m*2-Math.round(m*2))<.01?" On a half-unit 0.3 mL syringe this is a half-unit mark.":"";
 return`Draw to about ${mk(s,m)}, between the ${u(a)} and ${u(a+s.tick)} ticks on a ${s.label} syringe.${h} ${s.desc}`}
-function svg(s,segs,label){const tot=segs.reduce((a,g)=>a+g.vol,0),over=tot>s.ml+1e-9,fx=110+500*Math.min(1,isFinite(tot)?tot/s.ml:0);let x0=112,o="";
-for(const g of segs){const w=Math.max(0,Math.min(fx-x0,500*g.vol/s.ml));o+=`<rect x="${x0}" y="52" width="${w}" height="56" fill="${over?"#FF1744":g.c}" opacity=".9"/>`;x0+=w}
-let t="";for(let i=0;i<=s.n;i++){const x=110+500*i/s.n,L=i%s.le==0;t+=`<line x1="${x}" x2="${x}" y1="50" y2="${L?74:62}" stroke="#fff" stroke-width="${L?2.5:1.5}"/>`;if(i%s.lab==0)t+=`<text x="${x}" y="132" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">${s.scale==1?f(i*s.tick,2):f(i*s.tick,0)}</text>`}
-return`<svg width="100%" viewBox="0 0 720 170" style="margin-top:16px"><line x1="8" y1="80" x2="82" y2="80" stroke="#9E9E9E" stroke-width="3"/><rect x="80" y="66" width="30" height="28" rx="4" fill="#FF7A00"/>${o}<rect x="110" y="50" width="500" height="60" rx="6" fill="none" stroke="#fff" stroke-width="3"/><rect x="${fx+6}" y="74" width="${Math.max(0,650-fx)}" height="12" fill="#777"/><rect x="656" y="55" width="10" height="50" rx="3" fill="#777"/><rect x="608" y="36" width="8" height="88" rx="3" fill="#aaa"/><rect x="${fx-6}" y="51" width="12" height="58" rx="2" fill="#111" stroke="#666"/>${t}<polygon points="${fx-9},30 ${fx+9},30 ${fx},46" fill="#FF3D7F"/><text x="${Math.max(70,Math.min(650,fx))}" y="22" text-anchor="middle" font-size="17" font-weight="800" fill="#FF3D7F">${over?"Over capacity":esc(label)}</text><text x="110" y="158" font-size="14" fill="#b9b9c8">${s.unit} · needle end ← liquid → plunger</text></svg>`}
+function svg(s,segs,label){const X0=124,BW=500,tot=segs.reduce((a,g)=>a+g.vol,0),over=tot>s.ml+1e-9,fx=X0+BW*Math.min(1,isFinite(tot)?tot/s.ml:0);let x0=X0+2,o="";
+for(const g of segs){const w=Math.max(0,Math.min(fx-x0,BW*g.vol/s.ml));o+=`<rect x="${x0}" y="60" width="${w}" height="60" fill="${over?"#FF1744":g.c}" fill-opacity=".5"/><line x1="${x0+w}" x2="${x0+w}" y1="60" y2="120" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/>`;x0+=w}
+let t="";for(let i=0;i<=s.n;i++){const x=X0+BW*i/s.n,L=i%s.le==0;t+=`<line x1="${x}" x2="${x}" y1="58" y2="${L?82:70}" stroke="#111" stroke-width="${L?2:1.1}" opacity=".9"/>`;if(i%s.lab==0)t+=`<text x="${x}" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#111" stroke="#fff" stroke-width="3" paint-order="stroke" font-family="Helvetica,Arial,sans-serif">${s.scale==1?f(i*s.tick,2):f(i*s.tick,0)}</text>`}
+const ribs=[0,6,12].map(d=>`<rect x="${fx+d}" y="58" width="4" height="64" fill="#2b2b2b"/>`).join("");
+return`<svg width="100%" viewBox="0 0 760 190" style="margin-top:16px;display:block"><defs>
+<linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".25" stop-color="#eef4f8" stop-opacity=".9"/><stop offset=".75" stop-color="#d7e2ea" stop-opacity=".9"/><stop offset="1" stop-color="#f7fbff" stop-opacity=".95"/></linearGradient>
+<linearGradient id="st" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a8f96"/><stop offset=".45" stop-color="#f4f6f8"/><stop offset="1" stop-color="#6b7077"/></linearGradient>
+<linearGradient id="or" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB547"/><stop offset=".5" stop-color="#FF7A00"/><stop offset="1" stop-color="#C85A00"/></linearGradient>
+<linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#444"/><stop offset=".4" stop-color="#111"/><stop offset="1" stop-color="#000"/></linearGradient>
+<linearGradient id="lq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".15"/></linearGradient>
+<linearGradient id="rd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#dfe6ec" stop-opacity=".75"/></linearGradient></defs>
+<polygon points="8,90 14,88 92,88 92,92 14,92" fill="url(#st)"/>
+<path d="M92,78 L104,74 L124,70 L124,110 L104,106 L92,102 Z" fill="url(#or)"/><line x1="104" y1="76" x2="104" y2="104" stroke="#C85A00" stroke-width="1.5"/><line x1="112" y1="74" x2="112" y2="106" stroke="#C85A00" stroke-width="1.5"/>
+<rect x="${fx+18}" y="80" width="${Math.max(0,690-fx-18)}" height="20" fill="url(#rd)" stroke="#c9d3db"/><line x1="${fx+18}" y1="90" x2="690" y2="90" stroke="#c9d3db" stroke-width="2"/>
+<rect x="${X0}" y="56" width="${BW+6}" height="68" rx="8" fill="url(#gl)" stroke="#9fb0bd" stroke-width="2"/>
+${o}<rect x="${X0+2}" y="60" width="${Math.max(0,fx-X0-2)}" height="60" fill="url(#lq)"/>
+<rect x="${fx+18}" y="80" width="${Math.max(0,X0+BW-fx-18)}" height="20" fill="url(#rd)" opacity=".55"/>
+<rect x="${fx-2}" y="57" width="20" height="66" rx="4" fill="url(#rb)"/>${ribs}<path d="M${fx-1},60 Q${fx-7},90 ${fx-1},120" fill="#111"/>
+${t}<rect x="${X0+8}" y="61" width="${BW-12}" height="5" rx="2.5" fill="#fff" opacity=".8"/><rect x="${X0+8}" y="114" width="${BW-12}" height="3" rx="1.5" fill="#fff" opacity=".5"/>
+<text x="${X0+14}" y="116" font-size="11" font-weight="700" fill="#111" font-family="Helvetica,Arial,sans-serif">${s.scale==100?"U-100":s.scale==40?"U-40":"mL"}</text>
+<rect x="${X0+BW+4}" y="30" width="12" height="120" rx="5" fill="url(#rd)" stroke="#b7c3cc" stroke-width="1.5"/>
+<rect x="690" y="52" width="14" height="76" rx="6" fill="url(#rd)" stroke="#b7c3cc" stroke-width="1.5"/>
+<polygon points="${fx-10},30 ${fx+10},30 ${fx},50" fill="#FF3D7F" stroke="#fff" stroke-width="1.5"/><line x1="${fx}" y1="50" x2="${fx}" y2="56" stroke="#FF3D7F" stroke-width="2"/>
+<text x="${Math.max(70,Math.min(660,fx))}" y="22" text-anchor="middle" font-size="18" font-weight="800" fill="#FF3D7F">${over?"Over capacity":esc(label)}</text>
+<text x="${X0}" y="172" font-size="14" fill="#b9b9c8">${s.unit} · needle end ← liquid → plunger</text></svg>`}
 function needles(ids){const th=ids.some(i=>i=="ghk"||i=="nad"),kit=ids.filter(i=>i=="tesa"||i=="pt");const r=(c,h,b)=>`<div class="tile" style="background:${c};flex-basis:200px"><div style="font-weight:800">${h}</div><div class="s">${b}</div></div>`;
 return`<h2>Recommended needles</h2><div class="row">${r("#00C853","Inject: 29–31G, 6 mm","Insulin syringe under the skin. 6 mm preferred; 8 mm (5/16\") only with a skin pinch or 45°; 12.7 mm (1/2\") not recommended (risk of hitting muscle).")}${th?r("#D500F9","Thicker mix: 27–30G","GHK-Cu or NAD+ may push easier with a slightly wider needle (general guidance, unverified)."):""}${r("#2962FF","Mixing: 18–21G","Drawing needle to add bac water if you use a separate needle (general guidance, unverified).")}${kit.length?r("#FF7A00","Label kit",kit.map(i=>i=="tesa"?"Tesamorelin (Egrifta)":"PT-141 (Vyleesi autoinjector)").join(" and ")+": use the kit's needles, per the label."):""}</div><div class="small" style="margin-top:6px">Needle length source: <a href="https://doi.org/10.1016/j.mayocp.2025.01.004">FITTER Forward, Mayo Clin Proc 2025</a>. General guidance, not medical advice.</div>`}
 
@@ -158,6 +179,7 @@ else if(a=="ds"){S.ds={...S.ds,[id]:v};if(S.how=="Blend")S.swo={};else{const n={
 else if(a=="swo")S.swo={...S.swo,[id]:v};render()});
 render();
 if(location.hash=="#demo"){S.done=keyS();render()}
+if(location.hash=="#u30"){S.sid="u30";S.done=keyS();render()}
 if(location.hash=="#stack"){S.mode="Stack";S.mg={bpc:"10",tb:"10"};S.sdone=keyT();render()}
 if(location.hash=="#sep"){S.mode="Stack";S.how="Separate vials";S.swo={bpc:"2",tb:"2"};S.ds={tb:"2"};S.sdone=keyT();render()}
 </script></body></html>
