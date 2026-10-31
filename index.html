@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Peptide Calc">
+<meta name="theme-color" content="#651FFF">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>Peptide Calc</title>
+<style>
+:root{--bg:#0f0f14;--card:#1a1a24;--tx:#fff;--t2:#b9b9c8;--t3:#555566}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;
+padding:calc(env(safe-area-inset-top) + 12px) calc(env(safe-area-inset-right) + 14px) calc(env(safe-area-inset-bottom) + 24px) calc(env(safe-area-inset-left) + 14px)}
+#app{max-width:640px;margin:0 auto}
+h2{font-size:18px;margin:22px 0 10px}
+.hero{border-radius:20px;padding:18px;color:#fff}
+.hero .n{font-size:24px;font-weight:800}.box{background:rgba(0,0,0,.22);border-radius:12px;padding:8px 12px;margin-top:8px;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:11px 15px;border-radius:999px;border:2px solid;background:transparent;color:var(--tx);font-weight:600;font-size:15px;min-height:44px;font-family:inherit}
+.seg{display:flex;background:var(--card);border-radius:14px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;border-radius:11px;padding:12px;font-weight:700;font-size:15px;background:transparent;color:var(--t2);font-family:inherit}
+.seg button.on{background:linear-gradient(120deg,#FF3D7F,#651FFF);color:#fff}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+label{flex:1 1 130px;font-size:13px;color:var(--t2);display:flex;flex-direction:column;gap:4px}
+input{font-size:18px;padding:12px;border-radius:12px;border:2px solid #333;background:var(--card);color:#fff;width:100%;font-family:inherit}
+.tile{border-radius:16px;padding:13px 15px;color:#fff;flex:1 1 140px;min-width:0}
+.tile .b{font-size:22px;font-weight:800}.tile .s{font-size:13px;opacity:.9}
+.calc{width:100%;margin-top:22px;padding:18px;border:0;border-radius:18px;background:linear-gradient(120deg,#FF3D7F,#FF7A00);color:#fff;font-size:22px;font-weight:800;font-family:inherit;box-shadow:0 6px 18px rgba(255,61,127,.35)}
+.instr{margin-top:14px;background:linear-gradient(120deg,#FF3D7F,#AA00FF);border-radius:16px;padding:14px 16px;font-weight:600}
+.warn{background:#FF1744;border-radius:14px;padding:10px 14px;margin-top:10px;font-weight:600}
+.note{background:#FFB300;color:#222;border-radius:14px;padding:10px 14px;margin-top:10px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}th,td{text-align:left;padding:6px 4px;border-bottom:1px solid #2a2a36}
+a{color:#7fd8ff}.small{font-size:12px;color:var(--t2)}
+.vc{border:2px solid;border-radius:16px;padding:12px;margin-bottom:10px}
+</style></head><body><div id="app"></div>
+<script>
+const PEP=[
+["bpc","BPC-157","Tissue, tendon, gut healing (mostly animal data)","250–500 mcg 1–2x daily (commonly cited)",250,"mcg",[5,10,15,20],"Not FDA-approved; limited 503A compounding discretion (2026)","#00C853"],
+["tb","TB-500","Injury recovery (thymosin β4 fragment)","2–2.5 mg twice weekly (commonly cited loading)",2,"mg",[2,5,10,20],"Not FDA-approved; limited 503A compounding discretion (2026)","#00BFA5"],
+["cjc","CJC-1295 (no DAC)","GH release (GHRH analog)","100 mcg 1–3x daily (commonly cited)",100,"mcg",[2,5,10],"Not FDA-approved; FDA Category 2","#00B0FF"],
+["ipa","Ipamorelin","GH release (ghrelin agonist)","100–300 mcg 1–3x daily (commonly cited)",200,"mcg",[2,5,10],"Not FDA-approved; FDA Category 2","#2962FF"],
+["serm","Sermorelin","GH release (GHRH 1-29)","200–300 mcg nightly (commonly cited, off-label)",250,"mcg",[2,5,9,15],"Was FDA-approved (Geref), discontinued 2008","#651FFF"],
+["tesa","Tesamorelin","HIV-related abdominal fat","Egrifta SV 1.4 mg daily (2 mg + 0.5 mL); WR 1.28 mg daily (11.6 mg + 1.3 mL)",1.4,"mg",[2,5,10,11.6],"FDA-approved (Egrifta)","#AA00FF"],
+["ghk","GHK-Cu","Skin, collagen, hair, wound healing","1–2 mg daily (commonly cited)",1,"mg",[50,100],"Not FDA-approved; FDA Category 2","#00ACC1"],
+["pt","PT-141 (bremelanotide)","Low sexual desire (HSDD)","1.75 mg SC as needed; max 1 per 24 h, 8 per month",1.75,"mg",[10],"FDA-approved (Vyleesi autoinjector); vials are research","#F50057"],
+["mots","MOTS-c","Metabolic (mitochondrial)","5–10 mg weekly, often split (commonly cited)",5,"mg",[10,40],"Not FDA-approved","#FF6D00"],
+["selank","Selank","Anxiety, focus","250–500 mcg daily (commonly cited)",250,"mcg",[5,10],"Not FDA-approved; FDA Category 2","#64DD17"],
+["semax","Semax","Cognition, neuroprotection","200–600 mcg daily (commonly cited)",300,"mcg",[5,10],"Not FDA-approved","#1DE9B6"],
+["aod","AOD-9604","Fat loss (hGH fragment)","250–300 mcg daily (commonly cited)",300,"mcg",[2,5,10],"Not FDA-approved; FDA Category 2","#FFD600"],
+["nad","NAD+","Energy, cellular repair","50–100 mg 1–3x weekly SC (no live source confirmed)",50,"mg",[100,500,1000],"Not FDA-approved as a drug","#D500F9"],
+["epi","Epitalon","Sleep, aging research","5–10 mg daily for 10–20 days (commonly cited)",5,"mg",[10,50],"Not FDA-approved","#3D5AFE"],
+["kiss","Kisspeptin-10","LH/testosterone research","100 mcg (commonly cited, research)",100,"mcg",[5,10],"Not FDA-approved; FDA Category 2","#FF1744"]
+].map(a=>({id:a[0],name:a[1],use:a[2],dose:a[3],def:a[4],unit:a[5],vials:a[6],fda:a[7],c:a[8]}));
+const COM={bpc:5,tb:5,cjc:2,ipa:5,serm:9,tesa:2,ghk:50,pt:10,mots:10,selank:5,semax:5,aod:5,nad:500,epi:10,kiss:5};
+const GEN=["General guideline, not label-backed: refrigerate 2–8 °C (36–46 °F), protect from light, don't freeze, use within about 28–30 days with bac water","General guideline: cool, dry, dark; fridge or freezer long-term (unconfirmed)"];
+const STO={serm:["Geref label: mix right before use, discard remainder. Compounded: follow pharmacy use-by (commonly 28 days refrigerated)","Geref label: 2–8 °C, protect from light"],
+tesa:["Egrifta WR label: room temp 20–25 °C, discard 7 days after mixing, don't freeze. Egrifta SV: use right after mixing","Egrifta WR box at room temp, out of light; SV unconfirmed"],
+pt:["Vyleesi autoinjector needs no mixing; store ≤25 °C, don't freeze, protect from light. Research vials: general guideline (unconfirmed)","General guideline (unconfirmed)"]};
+const RANK={serm:0,tesa:0,pt:2};
+const SYR=[
+{id:"u30",label:"U-100 0.3 mL",ml:.3,scale:100,tick:1,unit:"units",n:30,le:5,lab:5,lo:5,hi:25,ref:10,desc:"Ticks: 1 unit each, long line and number every 5 (30 total). Half-unit versions add 0.5 marks."},
+{id:"u50",label:"U-100 0.5 mL",ml:.5,scale:100,tick:1,unit:"units",n:50,le:5,lab:10,lo:5,hi:45,ref:10,desc:"Ticks: 1 unit each, long line every 5, numbered every 10 (50 total)."},
+{id:"u100",label:"U-100 1 mL",ml:1,scale:100,tick:2,unit:"units",n:50,le:5,lab:5,lo:5,hi:50,ref:10,desc:"Ticks: 2 units each, long line and number every 10 (100 total)."},
+{id:"u40",label:"U-40 1 mL",ml:1,scale:40,tick:1,unit:"units",n:40,le:5,lab:10,lo:4,hi:30,ref:8,desc:"Ticks: 1 unit each, long line every 5, numbered every 10 (40 total)."},
+{id:"tb1",label:"TB 1 mL",ml:1,scale:1,tick:.01,unit:"mL",n:100,le:5,lab:10,lo:.05,hi:.5,ref:.1,desc:"Ticks: 0.01 mL, long line every 0.05, numbered every 0.1 mL."},
+{id:"tb3",label:"TB 3 mL",ml:3,scale:1,tick:.1,unit:"mL",n:30,le:5,lab:5,lo:.2,hi:2,ref:.5,desc:"Ticks: 0.1 mL, long line and number every 0.5 mL."}];
+const PRE=[["Wolverine (BPC + TB)",["bpc","tb"]],["CJC + Ipamorelin",["cjc","ipa"]],["GLOW (BPC + TB + GHK)",["bpc","tb","ghk"]],["Tesamorelin + Ipamorelin",["tesa","ipa"]],["Selank + Semax",["selank","semax"]]];
+const WS=[.5,1,1.5,2,2.5,3,4,5],WL=[...WS,6,8,10];
+const f=(n,d=2)=>isFinite(n)?String(Math.round(n*10**d)/10**d):"–";
+const ord=n=>n+(n%10==1&&n%100!=11?"st":n%10==2&&n%100!=12?"nd":n%10==3&&n%100!=13?"rd":"th");
+const P=id=>PEP.find(p=>p.id==id), Sy=id=>SYR.find(s=>s.id==id);
+const mk=(s,m)=>s.scale==1?f(m,3)+" mL":f(m,2)+" units";
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function pickW(v,d,s,c0){const c1=c0.filter(w=>v/w<=100),C=c1.length?c1:[c0[c0.length-1]];let b=null;
+for(const w of C){const m=d*w/v*s.scale,k=m/s.tick,onT=Math.abs(k-Math.round(k))<1e-6,q=s.scale==1?m/.05:m/5,five=Math.abs(q-Math.round(q))<1e-6,inR=m>=s.lo&&m<=s.hi,fits=m<=s.ml*s.scale,std=Number.isInteger(w)||w==2.5;
+const sc=(fits?1e4:0)+(inR?1e3:0)+(onT?100:0)+(five?50:0)+(std?5:0)+(Math.abs(m-Math.round(m))<1e-6?60:0)-Math.abs(Math.log(m/s.ref))*10;if(!b||sc>b.sc)b={w,m,sc,inR,onT,fits}}return b}
+function recW(v,d,s,id){if(!(v>0&&d>0))return null;
+if(id=="tesa"&&(v==2||v==11.6)){const w=v==2?.5:1.3;return{w,m:d*w/v*s.scale,why:"Matches the Egrifta label mixing volume."}}
+if(d>=v)return{w:1,m:d/v*s.scale,why:"Dose is more than the whole vial; pick a bigger vial."};
+let b=pickW(v,d,s,v>20?WL:WS);if(!b.inR&&v>10&&v<=20){const c=pickW(v,d,s,WL);if(c.sc>b.sc)b=c}
+const k=b.m/s.tick,wh=Math.abs(b.m-Math.round(b.m))<1e-6;
+return{w:b.w,m:b.m,why:!b.fits?"No standard water amount fits this syringe; pick a bigger syringe.":b.inR&&Math.abs(k-Math.round(k))<1e-6?"Lands on a tick in the readable range.":b.inR&&wh?"Whole unit in the readable range.":b.inR?"Readable range; no standard amount lands exactly on a tick.":"Closest standard amount; try another syringe."}}
+function instr(s,m){if(m>s.ml*s.scale+1e-9)return`More than a full ${s.label} syringe. Use more water, a bigger syringe, or separate injections. ${s.desc}`;
+const k=m/s.tick,n=Math.round(k),u=x=>s.scale==1?f(x,2)+" mL":f(x,2)+"-unit";
+if(Math.abs(k-n)<.01){const L=Math.floor(n/s.le),r=n%s.le;const w=r==0?`the ${ord(L)} long line`:L==0?`the ${ord(r)} short tick from zero`:`${r} short tick${r>1?"s":""} past the ${ord(L)} long line`;return`Draw to the ${u(n*s.tick)} line (${w}) on a ${s.label} syringe. ${s.desc}`}
+const a=Math.floor(k)*s.tick;const h=s.id=="u30"&&Math.abs(m*2-Math.round(m*2))<.01?" On a half-unit 0.3 mL syringe this is a half-unit mark.":"";
+return`Draw to about ${mk(s,m)}, between the ${u(a)} and ${u(a+s.tick)} ticks on a ${s.label} syringe.${h} ${s.desc}`}
+function svg(s,segs,label){const tot=segs.reduce((a,g)=>a+g.vol,0),over=tot>s.ml+1e-9,fx=110+500*Math.min(1,isFinite(tot)?tot/s.ml:0);let x0=112,o="";
+for(const g of segs){const w=Math.max(0,Math.min(fx-x0,500*g.vol/s.ml));o+=`<rect x="${x0}" y="52" width="${w}" height="56" fill="${over?"#FF1744":g.c}" opacity=".9"/>`;x0+=w}
+let t="";for(let i=0;i<=s.n;i++){const x=110+500*i/s.n,L=i%s.le==0;t+=`<line x1="${x}" x2="${x}" y1="50" y2="${L?74:62}" stroke="#fff" stroke-width="${L?2.5:1.5}"/>`;if(i%s.lab==0)t+=`<text x="${x}" y="132" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">${s.scale==1?f(i*s.tick,2):f(i*s.tick,0)}</text>`}
+return`<svg width="100%" viewBox="0 0 720 170" style="margin-top:16px"><line x1="8" y1="80" x2="82" y2="80" stroke="#9E9E9E" stroke-width="3"/><rect x="80" y="66" width="30" height="28" rx="4" fill="#FF7A00"/>${o}<rect x="110" y="50" width="500" height="60" rx="6" fill="none" stroke="#fff" stroke-width="3"/><rect x="${fx+6}" y="74" width="${Math.max(0,650-fx)}" height="12" fill="#777"/><rect x="656" y="55" width="10" height="50" rx="3" fill="#777"/><rect x="608" y="36" width="8" height="88" rx="3" fill="#aaa"/><rect x="${fx-6}" y="51" width="12" height="58" rx="2" fill="#111" stroke="#666"/>${t}<polygon points="${fx-9},30 ${fx+9},30 ${fx},46" fill="#FF3D7F"/><text x="${Math.max(70,Math.min(650,fx))}" y="22" text-anchor="middle" font-size="17" font-weight="800" fill="#FF3D7F">${over?"Over capacity":esc(label)}</text><text x="110" y="158" font-size="14" fill="#b9b9c8">${s.unit} · needle end ← liquid → plunger</text></svg>`}
+function needles(ids){const th=ids.some(i=>i=="ghk"||i=="nad"),kit=ids.filter(i=>i=="tesa"||i=="pt");const r=(c,h,b)=>`<div class="tile" style="background:${c};flex-basis:200px"><div style="font-weight:800">${h}</div><div class="s">${b}</div></div>`;
+return`<h2>Recommended needles</h2><div class="row">${r("#00C853","Inject: 29–31G, 6 mm","Insulin syringe under the skin. 6 mm preferred; 8 mm (5/16\") only with a skin pinch or 45°; 12.7 mm (1/2\") not recommended (risk of hitting muscle).")}${th?r("#D500F9","Thicker mix: 27–30G","GHK-Cu or NAD+ may push easier with a slightly wider needle (general guidance, unverified)."):""}${r("#2962FF","Mixing: 18–21G","Drawing needle to add bac water if you use a separate needle (general guidance, unverified).")}${kit.length?r("#FF7A00","Label kit",kit.map(i=>i=="tesa"?"Tesamorelin (Egrifta)":"PT-141 (Vyleesi autoinjector)").join(" and ")+": use the kit's needles, per the label."):""}</div><div class="small" style="margin-top:6px">Needle length source: <a href="https://doi.org/10.1016/j.mayocp.2025.01.004">FITTER Forward, Mayo Clin Proc 2025</a>. General guidance, not medical advice.</div>`}
+
+const S={mode:"Single",pid:"bpc",vial:"5",wo:null,dose:"250",du:"mcg",sid:"u100",done:"",
+mem:["bpc","tb"],how:"Blend",ssid:"u100",mg:{},ds:{},swo:{},prim:"bpc",sdone:""};
+const chip=(on,c,act,txt)=>`<button class="chip" style="border-color:${c};${on?`background:${c};color:#fff`:""}" data-a="${esc(act)}">${esc(txt)}</button>`;
+const seg=(opts,v,act)=>`<div class="seg">${opts.map(o=>`<button class="${o==v?"on":""}" data-a="${act}:${o}">${o}</button>`).join("")}</div>`;
+const inp=(lab,key,val)=>`<label>${esc(lab)}<input type="number" inputmode="decimal" step="any" data-k="${key}" value="${esc(val)}"></label>`;
+const keyS=()=>JSON.stringify([S.pid,S.vial,S.wo,S.dose,S.du,S.sid]);
+const keyT=()=>JSON.stringify([S.mem,S.how,S.ssid,S.mg,S.ds,S.swo,S.prim]);
+function single(){const p=P(S.pid),s=Sy(S.sid),v=parseFloat(S.vial),dd=parseFloat(S.dose),dmg=S.du=="mcg"?dd/1000:dd;
+const rec=recW(v,dmg,s,p.id),water=S.wo??(rec?String(rec.w):"2"),w=parseFloat(water);
+const conc=v/w,vol=dmg/conc,marks=vol*s.scale,ok=v>0&&w>0&&dd>0,show=S.done==keyS(),over=vol>s.ml,st=STO[p.id]||GEN;
+const sizes=[...new Set([...p.vials,2,5,10,15,20])].sort((a,b)=>a-b);
+let h=`<div class="hero" style="background:linear-gradient(120deg,${p.c},#651FFF 60%,#00B0FF)"><div class="n">${p.name}</div><div>${p.use}</div><div class="box">${p.dose}</div><div class="small" style="color:#fff;margin-top:6px;font-weight:600">${p.fda}</div><div class="box" style="background:rgba(255,255,255,.18)"><b>Storage after mixing:</b> ${st[0]}<br><b>Unmixed:</b> ${st[1]}</div></div>
+<h2>Peptide</h2><div class="chips">${PEP.map(x=>chip(x.id==p.id,x.c,"pick:"+x.id,x.name)).join("")}</div>
+<h2>Vial and water</h2><div class="chips">${sizes.map(z=>chip(S.vial==String(z),"#FF7A00","vial:"+z,z+" mg"+(z==COM[p.id]?" ★":""))).join("")}</div>
+<div class="row" style="margin-top:12px">${inp("Vial (mg)","vial",S.vial)}${inp(S.wo==null?"Bac water (mL), auto":"Bac water (mL), yours","water",water)}</div>
+${rec?`<div class="tile" style="background:#00B0FF;margin-top:12px"><div style="font-size:18px;font-weight:800">Add ${rec.w} mL bac water (${f(v/rec.w,3)} mg/mL)${S.wo==null?" ✓":""}</div><div class="s">${f(v)} mg vial + ${rec.w} mL = ${f(v/rec.w,3)} mg/mL; ${esc(S.dose)} ${S.du} = ${mk(s,rec.m)} on ${s.label}. ${rec.why}</div>${S.wo!=null?chip(false,"#fff","reset","Use recommended"):""}</div>`:""}
+<table><tr><th>Vial</th><th>Add water</th><th>mg/mL</th><th>Draw (${s.label})</th></tr>${sizes.map(z=>{const x=recW(z,dmg,s,p.id);return`<tr style="font-weight:${z==COM[p.id]?800:400}"><td>${z} mg${z==COM[p.id]?" ★":""}</td><td>${x?x.w+" mL":"–"}</td><td>${x?f(z/x.w,2):"–"}</td><td>${x?mk(s,x.m):"–"}</td></tr>`}).join("")}</table>
+<div class="small">★ most common size (typical vendor listings, unverified).</div>
+<h2>Dose</h2><div class="row" style="align-items:flex-end">${inp("Dose ("+S.du+")","dose",S.dose)}<div style="flex:1 1 130px">${seg(["mcg","mg"],S.du,"du")}</div></div>
+<h2>Syringe</h2><div class="chips">${SYR.map(x=>chip(x.id==s.id,"#AA00FF","sid:"+x.id,x.label)).join("")}</div>
+<button class="calc" data-a="calc">${show?"Calculated ✓  Tap to recalculate":"Calculate"}</button>`;
+if(ok&&show){const pu=s.scale==1?conc*10:conc*1000/s.scale;
+h+=`<h2>Draw</h2><div class="row"><div class="tile" style="background:#FF3D7F"><div class="b">${mk(s,marks)}</div><div class="s">Draw on ${s.label}</div></div><div class="tile" style="background:#00C853"><div class="b">${f(vol,3)} mL</div><div class="s">Volume</div></div><div class="tile" style="background:#2962FF"><div class="b">${f(conc,3)} mg/mL</div><div class="s">Concentration</div></div><div class="tile" style="background:#FF7A00"><div class="b">${f(pu)} mcg</div><div class="s">${s.scale==1?"per 0.01 mL":"per unit"}</div></div><div class="tile" style="background:#AA00FF"><div class="b">${f(Math.floor(v/dmg*10)/10,1)}</div><div class="s">Doses per vial</div></div></div>
+<div class="instr">${esc(instr(s,marks))}</div>${svg(s,[{vol,c:p.c}],"Draw to "+mk(s,marks))}${over?`<div class="warn">Over ${s.label} capacity. Add more water or use a bigger syringe.</div>`:""}${!over&&marks<s.tick?`<div class="note">Below one tick. Use less water for accuracy.</div>`:""}${needles([p.id])}`}
+return h}
+function stack(){const s=Sy(S.ssid),ps=S.mem.map(P),pr=S.mem.includes(S.prim)?S.prim:S.mem[0],pp=P(pr);
+const gv=p=>S.mg[p.id]??String(COM[p.id]??p.vials[0]),gd=p=>S.ds[p.id]??String(p.def),dm=p=>{const d=parseFloat(gd(p));return p.unit=="mcg"?d/1000:d};
+const amt=(p,x)=>p.unit=="mcg"?f(x*1000,1)+" mcg":f(x,3)+" mg";
+const vP=parseFloat(gv(pp)),bR=recW(vP,dm(pp),s,pp.id),bW=parseFloat(S.swo.blend??String(bR?bR.w:2)),bV=dm(pp)/(vP/bW);
+const sep=ps.map(p=>{const v=parseFloat(gv(p)),rc=recW(v,dm(p),s,p.id),w=parseFloat(S.swo[p.id]??String(rc?rc.w:2)),vol=dm(p)/(v/w);return{p,v,rc,w,vol,m:vol*s.scale}});
+const tv=S.how=="Blend"?bV:sep.reduce((a,x)=>a+x.vol,0),tm=tv*s.scale,over=tv>s.ml+1e-9,ok=isFinite(tv)&&tv>0,show=S.sdone==keyT();
+const strict=ps.reduce((a,p)=>(RANK[p.id]??3)<(RANK[a.id]??3)?p:a,ps[0]),mixed=new Set(ps.map(p=>RANK[p.id]??3)).size>1;
+let h=`<div class="hero" style="background:linear-gradient(120deg,${ps.map(p=>p.c).join(",")}${ps.length<2?",#651FFF":""})"><div class="n">${ps.map(p=>p.name).join(" + ")}</div>${ps.map(p=>`<div class="box"><b>${p.name}:</b> ${p.dose}<br><b>Storage after mixing:</b> ${(STO[p.id]||GEN)[0]}</div>`).join("")}${S.how=="Blend"?`<div style="font-size:13px;font-weight:700;margin-top:8px">Blend storage: follow ${mixed?`the strictest rule (${strict.name}'s)`:"the shared rule above"}; the shortest use-by applies to the whole vial.</div>`:""}</div>
+<h2>Stack presets</h2><div class="chips">${PRE.map((x,i)=>chip(JSON.stringify(x[1])==JSON.stringify(S.mem),"#FF3D7F","pre:"+i,x[0])).join("")}</div>
+<h2>Or pick 2–3</h2><div class="chips">${PEP.map(x=>chip(S.mem.includes(x.id),x.c,"tog:"+x.id,x.name)).join("")}</div>${S.mem.length<2?`<div class="note">Pick at least 2 peptides to stack.</div>`:""}
+<h2>How it's mixed</h2>${seg(["Blend","Separate vials"],S.how,"how")}
+<h2>Syringe</h2><div class="chips">${SYR.map(x=>chip(x.id==s.id,"#AA00FF","ssid:"+x.id,x.label)).join("")}</div>`;
+if(S.how=="Blend"){h+=`<h2>Blend vial</h2><div class="chips">${ps.map(p=>chip(p.id==pr,p.c,"prim:"+p.id,"Dose by "+p.name)).join("")}</div><div class="row" style="margin-top:12px">${ps.map(p=>inp(p.name+" mg in vial","mg:"+p.id,gv(p))).join("")}${inp(pp.name+" dose ("+pp.unit+")","ds:"+pp.id,gd(pp))}${inp(S.swo.blend==null?"Bac water (mL), auto":"Bac water (mL), yours","swo:blend",String(bW))}</div>
+${bR?`<div class="tile" style="background:#00B0FF;margin-top:12px"><div style="font-size:18px;font-weight:800">Add ${bR.w} mL bac water (${f(vP/bR.w,3)} mg/mL ${pp.name})${S.swo.blend==null?" ✓":""}</div><div class="s">${esc(gd(pp))} ${pp.unit} = ${mk(s,bR.m)}. ${bR.why} Others follow the vial ratio.</div>${S.swo.blend!=null?chip(false,"#fff","sreset","Use recommended"):""}</div>`:""}`}
+else{h+=`<h2>Separate vials</h2>`+sep.map(x=>`<div class="vc" style="border-color:${x.p.c}"><div style="font-weight:800;color:${x.p.c};margin-bottom:6px">${x.p.name}</div><div class="row">${inp("Vial (mg)","mg:"+x.p.id,gv(x.p))}${inp("Dose ("+x.p.unit+")","ds:"+x.p.id,gd(x.p))}${inp(S.swo[x.p.id]==null?"Water (mL), auto":"Water (mL), yours","swo:"+x.p.id,String(x.w))}</div>${x.rc?`<div class="small" style="margin-top:6px">Add ${x.rc.w} mL bac water: ${f(x.v/x.rc.w,3)} mg/mL; ${esc(gd(x.p))} ${x.p.unit} = ${mk(s,x.rc.m)}. ${x.rc.why}</div>`:""}</div>`).join("")}
+h+=`<button class="calc" data-a="scalc">${show?"Calculated ✓  Tap to recalculate":"Calculate stack"}</button>`;
+if(ok&&show){h+=`<h2>Stack draw</h2><div class="row">${S.how=="Blend"?ps.map(p=>`<div class="tile" style="background:${p.c}"><div class="b">${amt(p,bV*(parseFloat(gv(p))/bW))}</div><div class="s">${p.name} per draw</div></div>`).join(""):sep.map(x=>`<div class="tile" style="background:${x.p.c}"><div class="b">${mk(s,x.m)}</div><div class="s">${x.p.name}, ${esc(gd(x.p))} ${x.p.unit}</div></div>`).join("")}<div class="tile" style="background:${over?"#FF1744":"#333"}"><div class="b">${mk(s,tm)}</div><div class="s">${S.how=="Blend"?"One draw":"Total in one syringe"} · ${f(tv,3)} mL</div></div></div>
+<div class="instr">${S.how!="Blend"&&!over?esc(`Draw ${sep.map(x=>x.p.name+" "+mk(s,x.m)).join(", then ")}, in that order. Final total: `):""}${esc(instr(s,tm))}</div>${svg(s,S.how=="Blend"?[{vol:bV,c:ps[0].c}]:sep.map(x=>({vol:x.vol,c:x.p.c})),"Draw to "+mk(s,tm))}
+${over?`<div class="warn">Total ${mk(s,tm)} is over ${s.label} capacity. Use a bigger syringe or inject separately.</div>`:""}${needles(S.mem)}${S.how!="Blend"?`<div class="note">Mixing different vials in one syringe: check compatibility; many people inject separately.</div>`:""}`}
+return h}
+function render(){const y=scrollY;document.getElementById("app").innerHTML=seg(["Single","Stack"],S.mode,"mode")+(S.mode=="Single"?single():stack())+`<p class="small" style="margin-top:24px">For educational and research use only, not medical advice. Confirm doses with a clinician.</p>`;scrollTo(0,y)}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;const [a,v]=b.dataset.a.split(/:(.*)/);
+if(a=="mode")S.mode=v;else if(a=="pick"){const p=P(v);S.pid=v;S.vial=String(COM[v]);S.wo=null;S.dose=String(p.def);S.du=p.unit}
+else if(a=="vial"){S.vial=v;S.wo=null}else if(a=="reset")S.wo=null;else if(a=="sid"){S.sid=v;S.wo=null}
+else if(a=="du"){const n=parseFloat(S.dose);if(v!=S.du&&isFinite(n))S.dose=f(v=="mg"?n/1000:n*1000,4);S.du=v}
+else if(a=="calc")S.done=keyS();else if(a=="scalc")S.sdone=keyT();
+else if(a=="pre"){S.mem=[...PRE[v][1]];S.prim=S.mem[0];S.swo={}}
+else if(a=="tog"){S.swo={};S.mem=S.mem.includes(v)?(S.mem.length>1?S.mem.filter(x=>x!=v):S.mem):S.mem.length<3?[...S.mem,v]:S.mem}
+else if(a=="how")S.how=v;else if(a=="ssid"){S.ssid=v;S.swo={}}else if(a=="prim"){S.prim=v;S.swo={}}else if(a=="sreset")S.swo={};
+render()});
+document.addEventListener("change",e=>{const k=e.target.dataset.k;if(!k)return;const v=e.target.value;const [a,id]=k.split(":");
+if(a=="vial"){S.vial=v;S.wo=null}else if(a=="water")S.wo=v;else if(a=="dose"){S.dose=v;S.wo=null}
+else if(a=="mg"){S.mg={...S.mg,[id]:v};if(S.how=="Blend")S.swo={};else{const n={...S.swo};delete n[id];S.swo=n}}
+else if(a=="ds"){S.ds={...S.ds,[id]:v};if(S.how=="Blend")S.swo={};else{const n={...S.swo};delete n[id];S.swo=n}}
+else if(a=="swo")S.swo={...S.swo,[id]:v};render()});
+render();
+if(location.hash=="#demo"){S.done=keyS();render()}
+if(location.hash=="#stack"){S.mode="Stack";S.mg={bpc:"10",tb:"10"};S.sdone=keyT();render()}
+if(location.hash=="#sep"){S.mode="Stack";S.how="Separate vials";S.swo={bpc:"2",tb:"2"};S.ds={tb:"2"};S.sdone=keyT();render()}
+</script></body></html>
